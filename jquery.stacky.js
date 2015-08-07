@@ -9,12 +9,8 @@
 		
         var pancake = this;
         
-		var stepControl='';		
-		var stepCount = this.length;
-		
-        
-        
-		pancake.each(function(index) {
+
+	    pancake.each(function(index) {
             var container = $(this);
             calcAllTileWidths(container, options.tiles, options.tileSizeControler);
             calcAllTileHeights(container, options.tiles, options.tileSizeControler);
@@ -33,7 +29,7 @@
 		});
         
         function getTileWidth(element, sizeControl){
-            return element.find(sizeControl).width();
+            return element.find(sizeControl).width().floor;
         }
         
         function calcAllTileWidths(container, selector, sizeControl){
