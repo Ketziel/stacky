@@ -4,6 +4,7 @@
 		var defaults = {
 			tiles: '.tile',
             tileSizeControler: 'img',
+            colClassPrefix: 'col-',
             bestFit: true,
             spacerClass: 'spacer',
             onResize: function(){}
@@ -21,7 +22,7 @@
             bestFit($(this), options.tiles, options.tileSizeControler, options.spacerClass);
             
             calcAllTileTops(container, options.tiles);
-            
+            applyClasses(container, options.tiles, options.tileSizeControler);
             //console.log('return:'+getTilesInRow(container, options.tiles));            
             //console.log(getTileAtPosition(container, options.tiles, 4).html());
             
@@ -159,10 +160,26 @@
                 if (i < r-1){
                     i++
                 } else {
-                    i = 0;   
+                    i = 0;
                 }
             });
             return a;
+        }
+        
+        function applyClasses(container, element, selector){
+            var r = getTilesInRow(container, selector);
+            for (i = 1; i <= r; i++) {
+                container.find(element).removeClass((options.colClassPrefix + i));
+            }
+            
+            var i = 1;
+            container.find(element).each(function(index){
+                if(i > r){
+                    i = 1;
+                }
+                $(this).addClass((options.colClassPrefix + i));
+                i++;
+            });
         }
         
         function addSpacerBefore(container, element, sizeControl, spacerClass){
@@ -241,6 +258,7 @@
                 calcAllTileHeights(container, options.tiles, options.tileSizeControler, options.spacerClass);
                 bestFit($(this), options.tiles, options.tileSizeControler, options.spacerClass);
                 calcAllTileTops($(this), options.tiles);
+                applyClasses(container, options.tiles, options.tileSizeControler);
                 //$(this).find('.'+options.spacerClass).css('height',0);
             });
             
