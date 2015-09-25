@@ -95,18 +95,14 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-#mosaic {position: relative;}
 
 .content-wrapper { width: 1200px; margin: auto; width: 77.8%; overflow: hidden;}
 
-/*.mosaic-wrapper { display: inline-flex; flex-direction: row; flex-wrap: wrap; }*/
-.mosaic-wrapper { font-size: 0; }
-    .mosaic-wrapper .tile { vertical-align: top; position: relative; display: inline-block; font-size: 1em; /*transition: .5s;*/ margin: 10px;}
+#mosaic {position: relative;}
+.mosaic-wrapper { font-size: 0; text-align: center; }
+    .mosaic-wrapper .tile { vertical-align: top; position: relative; display: inline-block; font-size: 1em; margin: 10px;}
+.mosaic-wrapper .tile.spacer {overflow: hidden; margin-top: 0; margin-bottom: 0; padding-top: 0; padding-bottom: 0;}
     .mosaic-wrapper .tile img { width: 100%; }
-
-
-
-
 
 
 
