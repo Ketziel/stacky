@@ -3,7 +3,7 @@
 
 		var defaults = {
 			tiles: '.tile',
-            tileSizeControler: 'img',
+            tileSizeControler: 'size-controler',
             colClassPrefix: 'col-',
             bestFit: true,
             spacerClass: 'spacer',
