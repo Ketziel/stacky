@@ -31,6 +31,7 @@
             });*/
 		});
         
+        
         function getTileWidth(element, sizeControl){
             return element.find(sizeControl).width().floor;
         }
