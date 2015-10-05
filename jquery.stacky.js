@@ -199,7 +199,8 @@
         
         function bestFit(container, selector, sizeControl, spacerClass){
             
-            if(options.bestFit){
+            if(options.bestFit == true){
+                alert('running');
                 container.find('.'+spacerClass).remove();
                 var rowCount = getTilesInRow(container, selector);
                 var lastRowCount = $(container).find(selector).size() % rowCount;
