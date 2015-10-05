@@ -16,6 +16,9 @@
 
 	    pancake.each(function(index) {
             var container = $(this);
+                if (options.bestFit == true && container.css('text-align') != 'center') {
+                    container.css('text-align','center');
+                }
             calcAllTileWidths(container, options.tiles, options.tileSizeControler);
             //addSpacerBefore($(this), $(this).find(options.tiles).last(), options.tileSizeControler, options.spacerClass);
             calcAllTileHeights(container, options.tiles, options.tileSizeControler, options.spacerClass);
@@ -200,7 +203,7 @@
         function bestFit(container, selector, sizeControl, spacerClass){
             
             if(options.bestFit == true){
-                alert('running');
+                
                 container.find('.'+spacerClass).remove();
                 var rowCount = getTilesInRow(container, selector);
                 var lastRowCount = $(container).find(selector).size() % rowCount;

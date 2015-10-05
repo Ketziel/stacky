@@ -6,12 +6,14 @@
             .content-wrapper { width: 1200px; margin: auto; width: 77.8%; overflow: hidden;}
 
             #stacky {position: relative;}
-            .stacky-wrapper { font-size: 0; text-align: center; }
-                .stacky-wrapper .tile { vertical-align: top; position: relative; display: inline-block; font-size: 1em; margin: 10px; width: 262px;}
+            .stacky-wrapper { font-size: 0;}
+                .stacky-wrapper .tile { vertical-align: top; position: relative; display: inline-block; font-size: 1em; margin: 10px; width: 262px; padding: 5px; background-color: #fff;}
                 .stacky-wrapper .tile.spacer {overflow: hidden; margin-top: 0; margin-bottom: 0; padding-top: 0; padding-bottom: 0;}
                 .stacky-wrapper .tile img { width: 100%; }
                 .stacky-wrapper .tile p { font-size: 16px; }
                 .stacky-wrapper .tile .size-controler {display: inline-block;}
+            
+            body {background-color: #646464;}
 
         </style>
     </head>
@@ -233,7 +235,7 @@
         
         <script>
             $(window).load(function(){
-                $('#stacky .stacky-wrapper').stacky( {'tiles': '.tile', 'bestFit': 'false'});
+                $('#stacky .stacky-wrapper').stacky( {'tiles': '.tile', 'bestFit': false});
             });
         </script>
 
