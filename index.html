@@ -3,60 +3,148 @@
     <head>
         <title>Stacky</title>
         <style>
-            .content-wrapper { width: 1200px; margin: auto; width: 77.8%; overflow: hidden;}
-
+            
+            /* Required Styles */
+            /* These styles need to be included for Stacky to function. 
+            Class/ID names should be changed to suit, as should measurements on font-sizes (otjher than inline-block fixes) & margins. */
+            
             #stacky {position: relative;}
-            .stacky-wrapper { font-size: 0;}
-                .stacky-wrapper .tile { vertical-align: top; position: relative; display: inline-block; font-size: 1em; margin: 10px; width: 262px; padding: 5px; background-color: #fff;}
+            .stacky-wrapper { font-size: 0;/* This is an inline block fix, not intended to dictate style */}
+                .stacky-wrapper .tile { vertical-align: top; position: relative; display: inline-block; font-size: 1em;/* Also and inline block fix */ margin: 10px;}
                 .stacky-wrapper .tile.spacer {overflow: hidden; margin-top: 0; margin-bottom: 0; padding-top: 0; padding-bottom: 0;}
                 .stacky-wrapper .tile img { width: 100%; }
-                .stacky-wrapper .tile p { font-size: 16px; }
+                .stacky-wrapper .tile p { font-size: 16px;}
                 .stacky-wrapper .tile .size-controler {display: inline-block;}
             
-            body {background-color: #646464;}
+            
+            /* Non Essential Styles */
+            /* All css below is included to present a simple example style for a website.
+            You do NOT need to include any of these (unless you really, really want to!) */
+            
+             ::selection {background-color:#FF69B4; background-color:rgba(330,59,100,.75); color: #fff;}
+            body {font-family: "Trebuchet MS", Helvetica, sans-serif; color: #fff; background-color: #646464; font-size: 16px;}
+            .content-wrapper { width: 1200px; margin: auto; width: 77.8%; overflow: hidden;}
+            #masthead {position: relative;}
+            #masthead img {width: 100%;}
+            #masthead .content-box {background-color:#000; background-color:rgba(0,0,0,.75); position: absolute; margin: auto; left: 0; right: 0; top: 0; bottom: 0; max-width: 26em; max-height: 9.5em; padding: 1em;}
+                #masthead .content-box > h1 { text-align: center; font-weight: 100; font-size: 4em; margin: 0; color: hotpink;}
+                #masthead .content-box > p {text-align: center;}
+                    #masthead .content-box > p > strong, #masthead .content-box > p > a {font-weight: 400; margin: 0; color: hotpink;}
+                    #masthead .content-box > p.small {font-size: .6em;}
+            .stacky-wrapper .tile {width: 15.75em; padding: 5px; background-color: #fff; font-size: 16px;}
+            .stacky-wrapper .tile:hover {}
+            .stacky-wrapper .tile .overlay {position: absolute; bottom: 5px; text-align: center;}
+            .stacky-wrapper .tile .overlay .inner {max-height: 0em; overflow: hidden; transition: .5s; background-color: #000; background-color: rgba(0,0,0,.6); width: 15.75em;}
+            .stacky-wrapper .tile:hover .overlay .inner {max-height: 20em;}
+            .stacky-wrapper .tile .overlay .inner p {opacity: .01; transition: 1s;}
+            .stacky-wrapper .tile:hover .overlay .inner p {opacity: 1;}
+            .stacky-wrapper .tile p {margin: 1.5em;}
+            .stacky-wrapper .tile p strong { font-size: 1.4em; color: hotpink;}
+            .stacky-wrapper .tile .size-controler { background-color: #272727; text-align: center;}
+            
+            footer {background-color:#151515; background-color:rgba(17,17,17,1); padding: 15em 0;}
+                footer p {text-align: center;}
+                    footer p a {color: hotpink;}
+                    footer p a:hover {color: fff;}
 
         </style>
     </head>
     <body>
+        <section id="masthead">
+            <div class="content-wrapper">
+                <div class="content-box bottom">
+                    <h1>Stacky.js</h1>
+                    <p>BLAH BLAH BLAH BLAH.</p>
+                    <p class="small">(Plus <strong>43</strong> cat facts, from <a href="http://www.factslides.com/s-Cats">factslides.com</a>)</p>
+                </div>
+                <img src="https://placekitten.com/g/1440/700">
+            </div>
+        </section>
+        
         <section id="stacky">
             <div class="content-wrapper stacky-wrapper">
                 
                 <div class="tile">
                     <img class="size-controler" src="https://placekitten.com/g/350/300">
+                    <div class="overlay">
+                        <div class="inner">
+                            <p>Every year, nearly <strong>four million cats are eaten</strong> in China as a delicacy</p>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="tile">
                     <img class="size-controler" src="https://placekitten.com/g/350/500">
+                    <div class="overlay">
+                        <div class="inner">
+                            <p>Some cats have <strong>survived falls from over 32 stories</strong> (320 meters) onto concrete, due largely to their "righting reflex".</p>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="tile">
                     <img class="size-controler" src="https://placekitten.com/g/350/400">
+                    <div class="overlay">
+                        <div class="inner">
+                            <p>Cats have <strong>32 muscles</strong> that control the <strong>outer ear</strong> while humans have only 6.</p>
+                        </div>
+                    </div>
                 </div>
 
                 
                 <div class="tile">
                     <img class="size-controler" src="https://placekitten.com/g/350/450">
+                    <div class="overlay">
+                        <div class="inner">
+                            <p>A <strong>cat</strong> has been the <strong>mayor</strong> of Talkeetna, Alaska for <strong>15 years</strong>.</p>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="tile">
                     <img class="size-controler" src="https://placekitten.com/g/350/300">
+                    <div class="overlay">
+                        <div class="inner">
+                            <p>Cats can't taste <strong>sweetness</strong>.</p>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="tile">
                     <img class="size-controler" src="https://placekitten.com/g/350/250">
+                    <div class="overlay">
+                        <div class="inner">
+                            <p><strong>Cats</strong> sleep for <strong>70%</strong> of their lives.</p>
+                        </div>
+                    </div>
                 </div>
                 
                 
                 <div class="tile">
                     <img class="size-controler" src="https://placekitten.com/g/350/450">
+                    <div class="overlay">
+                        <div class="inner">
+                            <p>The <strong>longest</strong> cat ever measured <strong>48.5 inches</strong> (1.23 m) when fully stretched out.</p>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="tile">
                     <img class="size-controler" src="https://placekitten.com/g/350/400">
+                    <div class="overlay">
+                        <div class="inner">
+                            <p>The <strong>oldest video of cats</strong> on YouTube dates from <strong>1894</strong>.</p>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="tile">
                     <img class="size-controler" src="https://placekitten.com/g/350/550">
+                    <div class="overlay">
+                        <div class="inner">
+                            <p>Owning a cat can reduce the risk of <strong>heart attacks</strong> and strokes by more than a third, researchers found.</p>
+                        </div>
+                    </div>
                 </div>
                 
                 <!-- -->
@@ -64,170 +152,302 @@
                 
                 <div class="tile">
                     <div class="size-controler">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse mattis bibendum eleifend. Morbi feugiat malesuada lacinia.</p>
+                        <p>The <strong>CIA</strong> spent <strong>US$20 million</strong> in the 60s training cats to <strong>spy</strong> on the <strong>Soviets</strong>. The first spy cat was hit by a taxi.</p>
                     </div>
                 </div>
+
+                <div class="tile">
+                    <img class="size-controler" src="https://placekitten.com/g/350/300">
+                    <div class="overlay">
+                        <div class="inner">
+                            <p>A cat inherited a <strong>US$13 million fortune</strong> from its owner in Italy.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tile">
+                    <img class="size-controler" src="https://placekitten.com/g/350/500">
+                    <div class="overlay">
+                        <div class="inner">
+                            <p>In <strong>Korea</strong> and <strong>Japan</strong>, there is a <strong>Cat Cafe</strong> where you can go to drink coffee and <strong>hang out with cats</strong> for hours.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tile">
+                    <img class="size-controler" src="https://placekitten.com/g/350/400">
+                    <div class="overlay">
+                        <div class="inner">
+                            <p><strong>Cats</strong> recognize owners' voices <strong>but seem</strong> too cool to care, <strong>according to a <strike>fake</strike> study</strong>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="tile">
+                    <img class="size-controler" src="https://placekitten.com/g/350/450">
+                    <div class="overlay">
+                        <div class="inner">
+                            <p>Ancient Egyptians <strong>shaved</strong> off their <strong>eyebrows</strong> to mourn the <strong>death of their cats</strong>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tile">
+                    <img class="size-controler" src="https://placekitten.com/g/350/300">
+                    <div class="overlay">
+                        <div class="inner">
+                            <p>Black cats are considered to bring <strong>good luck</strong> in Japan.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tile">
+                    <img class="size-controler" src="https://placekitten.com/g/350/250">
+                    <div class="overlay">
+                        <div class="inner">
+                            <p>Cats have <strong>three</strong> eyelids.</p>
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="tile">
                     <div class="size-controler">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse mattis bibendum eleifend. Morbi feugiat malesuada lacinia.</p>
+                        <p>There's a <strong>theater</strong> in Russia where all the <strong>actors are cats</strong>.</p>
+                    </div>
+                </div>
+                
+                
+                <div class="tile">
+                    <img class="size-controler" src="https://placekitten.com/g/350/450">
+                    <div class="overlay">
+                        <div class="inner">
+                            <p>A cat <strong>called "Dusty"</strong> produced 420 kittens during her breeding life, a <strong>world record</strong>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tile">
+                    <img class="size-controler" src="https://placekitten.com/g/350/400">
+                    <div class="overlay">
+                        <div class="inner">
+                            <p>A <strong>fingerprint</strong> is to a human as a <strong>nose</strong> is to a cat.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tile">
+                    <img class="size-controler" src="https://placekitten.com/g/350/550">
+                    <div class="overlay">
+                        <div class="inner">
+                            <p>Cats have <strong>100+ sounds</strong> in their vocal repertoire.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="tile">
+                    <img class="size-controler" src="https://placekitten.com/g/350/300">
+                    <div class="overlay">
+                        <div class="inner">
+                            <p>The world's <strong>smallest</strong> cat is called <strong>"Tinker Toy"</strong> and he's just 2.75 inches (7 cm) tall</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tile">
+                    <img class="size-controler" src="https://placekitten.com/g/350/500">
+                    <div class="overlay">
+                        <div class="inner">
+                            <p>In <strong>Switzerland</strong>, some people still regularly <strong>eat dog and cat meat</strong>. It's legal in the country.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tile">
+                    <img class="size-controler" src="https://placekitten.com/g/350/400">
+                    <div class="overlay">
+                        <div class="inner">
+                            <p>In <strong>1963</strong>, a cat called "Felicette" became the first <strong>feline in space</strong>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="tile">
+                    <img class="size-controler" src="https://placekitten.com/g/350/450">
+                    <div class="overlay">
+                        <div class="inner">
+                            <p>In <strong>Ancient Egypt</strong>, <strong>killing a cat</strong>, even accidentally, incurred the <strong>death penalty</strong></p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="tile">
                     <img class="size-controler" src="https://placekitten.com/g/350/300">
-                </div>
-
-                <div class="tile">
-                    <img class="size-controler" src="https://placekitten.com/g/350/500">
-                </div>
-                
-                <div class="tile">
-                    <img class="size-controler" src="https://placekitten.com/g/350/400">
-                </div>
-
-                
-                <div class="tile">
-                    <img class="size-controler" src="https://placekitten.com/g/350/450">
-                </div>
-
-                <div class="tile">
-                    <img class="size-controler" src="https://placekitten.com/g/350/300">
+                    <div class="overlay">
+                        <div class="inner">
+                            <p>In 2009, an accused Florida man said <strong>his cat downloaded child porn</strong>, not him.</p>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="tile">
                     <img class="size-controler" src="https://placekitten.com/g/350/250">
+                    <div class="overlay">
+                        <div class="inner">
+                            <p>The <strong>first cloned cat</strong> was called <strong>"CC"</strong>, short for <strong>"Carbon Copy."</strong></p>
+                        </div>
+                    </div>
                 </div>
-                
                 
                 <div class="tile">
                     <img class="size-controler" src="https://placekitten.com/g/350/450">
+                    <div class="overlay">
+                        <div class="inner">
+                            <p><strong>Declawing cats</strong> is <strong>legal</strong> in most <strong>U.S.</strong> states but <strong>banned</strong> in at least <strong>22 countries</strong> including Germany, Finland, Switzerland, Australia, New Zealand and Japan.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tile">
+                    <div class="size-controler">
+                        <p>Cleaning a <strong>cat's litter box</strong> can get you Toxoplasmosis if the cat is infected. While <strong>pregnant</strong>, it can cause your baby to be born with <strong>cerebral palsy</strong>, seizures, and <strong>mental retardation</strong>.</p>
+                    </div>
                 </div>
 
                 <div class="tile">
                     <img class="size-controler" src="https://placekitten.com/g/350/400">
+                    <div class="overlay">
+                        <div class="inner">
+                        <p>Cats are <strong>believed</strong> to be responsible for the extinction of <strong>several species of animals</strong>.</p>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="tile">
                     <img class="size-controler" src="https://placekitten.com/g/350/550">
+                    <div class="overlay">
+                        <div class="inner">
+                            <p>A physicist made his <strong>cat</strong> the co-author of his <strong>scientific paper</strong> to avoid replacing "we" with "I" throughout his paper.</p>
+                        </div>
+                    </div>
                 </div>
                 
                 
                 <div class="tile">
                     <img class="size-controler" src="https://placekitten.com/g/350/300">
+                    <div class="overlay">
+                        <div class="inner">
+                            <p>Cats <strong>sweat</strong> through their <strong>paws</strong>.</p>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="tile">
                     <img class="size-controler" src="https://placekitten.com/g/350/500">
+                    <div class="overlay">
+                        <div class="inner">
+                            <p><strong>Cats can dream</strong>. They produce the same brain wave patterns that we do when we dream.</p>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="tile">
                     <img class="size-controler" src="https://placekitten.com/g/350/400">
+                    <div class="overlay">
+                        <div class="inner">
+                            <p><strong>Cats</strong> can get sick or <strong>die</strong> from eating <Strong>chocolate</Strong>.</p>
+                        </div>
+                    </div>
                 </div>
 
+                <div class="tile">
+                    <div class="size-controler">
+                        <p>Research has shown that domestic <strong>cats never forgive</strong>. They fail to show signs of reconciliation like other animals do</p>
+                    </div>
+                </div>
+                
                 
                 <div class="tile">
                     <img class="size-controler" src="https://placekitten.com/g/350/450">
+                    <div class="overlay">
+                        <div class="inner">
+                            <p>More than <strong>86,000 people</strong> are <strong>injured</strong> by <strong>tripping</strong> over their <strong>cats and dogs</strong> every year in the U.S.</p>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="tile">
                     <img class="size-controler" src="https://placekitten.com/g/350/300">
+                    <div class="overlay">
+                        <div class="inner">
+                            <p>Cat <strong>kidneys</strong> are so efficient they can <strong>rehydrate</strong> by drinking <strong>seawater</strong></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tile">
+                    <div class="size-controler">
+                        <p>The Guinness World Records <strong>stopped awarding</strong> the <strong>fattest cats</strong> or any other animal to discourage deliberate overfeeding.</p>
+                    </div>
+                </div>
+                
+                
+                <div class="tile">
+                    <img class="size-controler" src="https://placekitten.com/g/350/450">
+                    <div class="overlay">
+                        <div class="inner">
+                            <p>Cats can't see <strong>directly below</strong> their noses.</p>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="tile">
                     <img class="size-controler" src="https://placekitten.com/g/350/250">
-                </div>
-                
-                
-                <div class="tile">
-                    <img class="size-controler" src="https://placekitten.com/g/350/450">
+                    <div class="overlay">
+                        <div class="inner">
+                            <p>Cats can <strong>swallow</strong> and <strong>digest</strong> their food without <strong>chewing it</strong>.</p>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="tile">
                     <img class="size-controler" src="https://placekitten.com/g/350/400">
+                    <div class="overlay">
+                        <div class="inner">
+                            <p>A <strong>cat's tail</strong> contains nearly <strong>10%</strong> of all the <strong>bones</strong> in its body.</p>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="tile">
                     <img class="size-controler" src="https://placekitten.com/g/350/550">
-                </div>
-                
-                
-                <div class="tile">
-                    <img class="size-controler" src="https://placekitten.com/g/350/300">
-                </div>
-
-                <div class="tile">
-                    <img class="size-controler" src="https://placekitten.com/g/350/500">
+                    <div class="overlay">
+                        <div class="inner">
+                            <p>Scientists have created <strong style="color:#05FA05;">glow-in-the-dark</strong> cats by inserting the <strong>jellyfish</strong> protein that codes for bioluminescence into their genome.</p>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="tile">
                     <img class="size-controler" src="https://placekitten.com/g/350/400">
-                </div>
-
-                
-                <div class="tile">
-                    <img class="size-controler" src="https://placekitten.com/g/350/450">
-                </div>
-
-                <div class="tile">
-                    <img class="size-controler" src="https://placekitten.com/g/350/300">
-                </div>
-                
-                <div class="tile">
-                    <img class="size-controler" src="https://placekitten.com/g/350/250">
+                    <div class="overlay">
+                        <div class="inner">
+                            <p>Adult cats only <strong>meow</strong> to communicate with <strong>humans</strong>.</p>
+                        </div>
+                    </div>
                 </div>
                 
                 
-                <div class="tile">
-                    <img class="size-controler" src="https://placekitten.com/g/350/450">
-                </div>
-
-                <div class="tile">
-                    <img class="size-controler" src="https://placekitten.com/g/350/400">
-                </div>
-                
-                <div class="tile">
-                    <img class="size-controler" src="https://placekitten.com/g/350/550">
-                </div>
-                
-                
-                <div class="tile">
-                    <img class="size-controler" src="https://placekitten.com/g/350/300">
-                </div>
-
-                <div class="tile">
-                    <img class="size-controler" src="https://placekitten.com/g/350/500">
-                </div>
-                
-                <div class="tile">
-                    <img class="size-controler" src="https://placekitten.com/g/350/400">
-                </div>
-
-                
-                <div class="tile">
-                    <img class="size-controler" src="https://placekitten.com/g/350/450">
-                </div>
-
-                <div class="tile">
-                    <img class="size-controler" src="https://placekitten.com/g/350/700">
-                </div>
-                
-                <div class="tile">
-                    <img class="size-controler" src="https://placekitten.com/g/350/250">
-                </div>
-                
-                
-                <div class="tile">
-                    <img class="size-controler" src="https://placekitten.com/g/350/450">
-                </div>
-
-                
-                <div class="tile">
-                    <img class="size-controler" src="https://placekitten.com/g/350/550">
-                </div>
-                
+              
                 
             </div>
         </section>
+        
+        <footer>
+            <p>Full code can be found on <a href="https://github.com/Ketziel/stacky" target="_blank">GitHub</a>.</p>
+        </footer>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="jquery.stacky.js"></script>
