@@ -41,7 +41,7 @@
         
         function calcAllTileWidths(container, selector, sizeControl){
             $(container).find(selector).css('width','');
-            var width = getTileWidth($(selector).first(), sizeControl);
+            var width = getTileWidth($(container).find(selector).first(), sizeControl);
             $(container).find(selector).css('width',width);
         }
         
